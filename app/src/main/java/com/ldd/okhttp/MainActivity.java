@@ -17,13 +17,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        OkHttpUtils.post().url("http://dev.mantoto.com//Json/PromotionProductGet.aspx")
-                .addParams("livingitemid","326")
+        OkHttpUtils.post()
+                .url("http://service.mantoto.com/Json/UserVerify.aspx")
+                .addParams("username","13552662536")
+                .addParams("password","123456")
+                .addParams("softtype","1")
                 .build().execute(new Callback() {
             @Override
             public Object parseNetworkResponse(Response response, int id) throws Exception {
                 Log.i(TAG,"response paseNetworkResponse = " +response);
-                return null;
+                return response;
             }
 
             @Override
