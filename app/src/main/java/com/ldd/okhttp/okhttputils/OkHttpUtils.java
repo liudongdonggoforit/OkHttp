@@ -137,7 +137,6 @@ public class OkHttpUtils
                         sendFailResultCallback(call, new IOException("Canceled!"), finalCallback, id);
                         return;
                     }
-
                     if (!finalCallback.validateReponse(response, id))
                     {
                         sendFailResultCallback(call, new IOException("request failed , reponse's code is : " + response.code()), finalCallback, id);
